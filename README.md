@@ -89,13 +89,7 @@ typora-root-url: ./
 
 3. 在ur5控制板上，启动与ros对接的程序，方法参见[此处](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_cb3.md)，注意，该操作必须在步骤2之后执行
 
-   <img src="/README.assets/微信图片_20220404105959.jpg" alt="微信图片_20220404105959" style="zoom:90%;" />
-
-   <img src="/README.assets/微信图片_20220404105954.jpg" alt="微信图片_20220404105954" style="zoom: 90%;" />
-
-   <img src="/README.assets/微信图片_20220404105946.jpg" alt="微信图片_20220404105946" style="zoom:67%;" />
-
-   ![微信图片_20220404105940](/README.assets/微信图片_20220404105940.jpg)
+<img src="/README.assets/微信图片_20220404115557.jpg" alt="微信图片_20220404115557" style="zoom:50%;" />
 
 4. 启动顶层moveit相关节点
 
