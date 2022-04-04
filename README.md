@@ -136,5 +136,5 @@ typora-root-url: ./
 
    如果tf出现问题，就先重新启动Moveit步骤
 
-<img src="/../../../.config/Typora/typora-user-images/image-20220403221438766.png" alt="image-20220403221438766" style="zoom:50%;" />
+<img src="/README.assets/image-20220403221438766.png" alt="image-20220403221438766" style="zoom:50%;" />
 
