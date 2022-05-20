@@ -39,7 +39,7 @@ typora-root-url: ./
 
    ```bash
    roslaunch ur_calibration calibration_correction.launch \
-     robot_ip:=<robot_ip> target_filename:="${HOME}/my_robot_calibration.yaml"
+     robot_ip:=192.168.1.110   target_filename:="${HOME}/my_robot_calibration.yaml"
    ```
 
    
@@ -72,11 +72,11 @@ typora-root-url: ./
 
 
 
-## 标定
+## 标定eye on base
 
 1. 自行安装好相机和标定板，标定板使用 [ar_track_alvar](http://wiki.ros.org/ar_track_alvar/)生成的10cm*10cm的二维码标签，id为7，确保相机能够观察到完整标签
 
-   <img src="/README.assets/微信图片_20220404105908.jpg" alt="微信图片_20220404105908" style="zoom: 10%;" />
+   <img src="./README.assets/微信图片_20220404105908.jpg" alt="微信图片_20220404105908" style="zoom: 10%;" />
 
    
 
@@ -89,7 +89,7 @@ typora-root-url: ./
 
 3. 在ur5控制板上，启动与ros对接的程序，方法参见[此处](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_cb3.md)，注意，该操作必须在步骤2之后执行
 
-<img src="/README.assets/微信图片_20220404115557.jpg" alt="微信图片_20220404115557" style="zoom:50%;" />
+<img src="./README.assets/微信图片_20220404115557.jpg" alt="微信图片_20220404115557" style="zoom:50%;" />
 
 4. 启动顶层moveit相关节点
 
@@ -116,12 +116,69 @@ typora-root-url: ./
    roslaunch ur5_hand_eye_calibrate ur5_eob.launch
    ```
 
+
+
+
+
+
+
+
+
+## 标定eye on hand
+
+使用realsense d435深度相机，安装在机械手上； 
+
+1. 将标签放置在桌面上，标定板与eye on base相同，确保相机视野范围能够看到标签
+
+
+
+2. 单独启动底层controller，将ip地址更换为你的ur5机械臂固定ip，机械臂校准参数路径也设置为之前保存的路径
+
+   ```bash
+   roslaunch ur_robot_driver ur5_bringup.launch robot_ip:=192.168.1.110 \
+     kinematics_config:="${HOME}/my_robot_calibration.yaml"
+   ```
+
+3. 在ur5控制板上，启动与ros对接的程序，与eye on base相应步骤相同
+
+   
+
+4. 启动顶层moveit相关节点
+
+   ```bash
+   roslaunch   ur5_hand_eye_calibrate   ur5_moveit_rviz.launch
+   ```
+
+5. 另一个命令窗口，打开相机
+
+   ```bash
+   roslaunch realsense2_camera rs_camera.launch
+   ```
+
+6. 另一个命令窗口，进行标定，按照提示进行标定
+
+   ```bash
+   roslaunch ur5_hand_eye_calibrate ur5_eoh.launch
+   ```
+
+
+
+
+
+
+
 ## 已标定&使用
 
-1. 发布手眼姿态矩阵
+1. eye on base发布手眼姿态矩阵
 
    ```bash
    roslaunch ur5_hand_eye_calibrate publish_ur5_eob.launch
+   ```
+   
+2. 或者eye on hand发布手眼姿态矩阵
+
+   ```bash
+   roslaunch ur5_hand_eye_calibrate publish_ur5_eoh.launch
    ```
    
 2. 解锁ur5机械臂，并启动Moveit
@@ -136,5 +193,5 @@ typora-root-url: ./
 
    如果tf出现问题，就先重新启动Moveit步骤
 
-<img src="/README.assets/image-20220403221438766.png" alt="image-20220403221438766" style="zoom:50%;" />
+<img src="./README.assets/image-20220403221438766.png" alt="image-20220403221438766" style="zoom:50%;" />
 
