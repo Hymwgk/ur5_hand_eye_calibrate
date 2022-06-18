@@ -3,7 +3,7 @@ typora-root-url: ./
 ---
 
 # ur5_hand_eye_calibrate
-基于easy_handeye开源项目，对ur5机械臂进行手眼标定（Kinect v2眼在手外）；里面主要是修改了一些easy_handeye中的一些launch文件，实现手眼转换矩阵的计算与发布。
+基于easy_handeye开源项目，对ur5机械臂进行手眼标定（Kinect v2眼在手外,realsenseD435 眼在手上）；里面主要是修改了一些easy_handeye中的一些launch文件，实现手眼转换矩阵的计算与发布。
 
 ## 依赖
 
