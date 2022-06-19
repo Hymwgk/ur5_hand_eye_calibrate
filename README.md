@@ -15,7 +15,7 @@ typora-root-url: ./
 
 4. 安装[easy_handeye](https://github.com/IFL-CAMP/easy_handeye)
 
-5. 参照[官方教程](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver)安装[Universal_Robots_ROS_Driver](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver) 与 [universal_robot](https://github.com/fmauch/universal_robot)包
+5. 参照[官方教程](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver)安装[Universal_Robots_ROS_Driver](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver) 与 [fmauch_universal_robot](https://github.com/fmauch/universal_robot)包
 
 6. 在`universal_robot/ur5_moveit_config/config`中创建`controllers.yaml`文件，并写入
 
