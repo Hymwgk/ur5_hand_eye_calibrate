@@ -35,7 +35,7 @@ typora-root-url: ./
 
 7. 按照[官方教程](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_cb3.md)，对ur5机械臂端进行配置，主要是在ur5端安装`externalcontrol-1.0.5.urcap` ，并设置工作站ip
 
-8. 抽取机械臂校准参数
+8. 抽取机械臂校准参数，该参数并非手眼标定得到的参数，个人感觉是为了描述和弥补机械臂自身安装、磨损等造成的误差，注意区分
 
    ```bash
    roslaunch ur_calibration calibration_correction.launch \
