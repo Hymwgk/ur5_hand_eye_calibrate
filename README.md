@@ -2,7 +2,7 @@
 typora-root-url: ./
 ---
 
-# UR5 Hand-eye Calibrate
+# UR5 Hand-eye Calibration
 
 Automatic hand-eye calibration of the UR5 robotic arm based on the open-source project [easy_handeye](https://github.com/IFL-CAMP/easy_handeye) and ROS. The calibration involves the static Kinect v2 camera installed on the surrounding (eye on base) and the RealSense D435 camera mounted on the ur5 end link (eye on hand). 
 
